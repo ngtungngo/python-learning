@@ -10,4 +10,5 @@
         ```git commit src src/first_programm.py -m "initial"```
         ```git push```
 
-        
+    4. Dateien abgleichen
+        ```git pull```
