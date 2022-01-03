@@ -26,3 +26,21 @@ mkdir src
     ```
     git pull
     ```
+### Create Number with range
+```
+numbers = list(range(1,20,2))
+print(numbers)
+```
+
+### Repeating the element multiple times
+```
+numbers = [3, 7, 12]
+multi = numbers*5
+```
+
+### Using Conditions in Ternary Operator
+
+```
+consume = 25000
+print("Hight") if consume > 50000 else print("Low")
+```
