@@ -84,3 +84,63 @@ result = re.subn(pattern, "EN", text)
 
 print(f'subn::result: {result}')
 ```
+
+## Simplify sequence check
+
+1. Way:
+```
+if len(list_of_some_things) > 0:
+    one_thing = chooose_thing(list_of_some_things)
+```
+2. Way:
+```
+if list_of_some_things:
+    one_thing = chooose_thing(list_of_some_things)
+
+```
+
+## Use Any instead of Loop
+1. Normal:
+```
+things = [1,3,4,5,9, 10, -3, -21]
+flag = False
+for num in things:
+    if num < 0:
+        flag = True
+        break
+```
+
+2. Pythonic
+```
+things = [1,3,4,5,9, 10, -3, -21]
+flag = any(things < 0 for num in things)
+```
+
+## Adding a Guard Clause
+1. Normal:
+```
+def do_i_need_hat(self, hat):
+    if isInstance(hat, Hat):
+        weather_outside = getWeatherReport()
+        if weather_outside.is_raining:
+            print("Yes")
+            return True
+        else:
+            return False
+    else:
+        return False
+```
+
+2. Better:
+```
+def do_i_need_hat(self, hat):
+    if not isInstance(hat, Hat):
+        return False
+if isInstance(hat, Hat):
+        weather_outside = getWeatherReport()
+        if weather_outside.is_raining:
+            print("Yes")
+            return True
+        else:
+            return False
+```
